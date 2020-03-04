@@ -1,4 +1,5 @@
-const uuid = require('uuid/v4');
+// const uuid = require('uuid/v4');
+const { uuidv4 } = require('uuid');
 const HttpError = require('../models/http-error');
 const { validationResult } = require('express-validator');
 
@@ -29,7 +30,7 @@ const signup = (req, res, next) => {
   }
 
   const createdUser = {
-    id: uuid(),
+    id: uuidv4(),
     name,
     email,
     password

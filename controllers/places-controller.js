@@ -1,4 +1,6 @@
-const uuid = require('uuid/v4');
+// const uuid = require('uuid/v4');
+// import { v4 as uuidv4 } from 'uuid';
+const { uuidv4 } = require('uuid');
 const HttpError = require('../models/http-error');
 const { validationResult } = require('express-validator');
 
@@ -59,7 +61,7 @@ const createPlace = (req, res, next) => {
   const { title, description, coordinates, address, creator } = req.body;
 
   const createdPlace = {
-    id: uuid(),
+    id: uuidv4(),
     title,
     description,
     location: coordinates,
