@@ -1,4 +1,4 @@
-const uuid = require('uuid/v4');
+// const uuid = require('uuid/v4');
 // import { v4 as uuidv4 } from 'uuid';
 // const { uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
@@ -69,7 +69,6 @@ const createPlace = async (req, res, next) => {
   let coordinates;
   try {
     coordinates = await getCoordsForAddress(address);
-    // console.log(coordinates);
   } catch (error) {
     return next(error);
   }
