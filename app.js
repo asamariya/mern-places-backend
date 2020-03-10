@@ -27,7 +27,7 @@ app.use((error, req, res, next) => {
 });
 
 const url =
-  'mongodb+srv://asamariya:XtV15vI676J9Dsyx@cluster0-a99mu.mongodb.net/places?retryWrites=true&w=majority';
+  'mongodb+srv://asamariya:XtV15vI676J9Dsyx@cluster0-a99mu.mongodb.net/mern-places?retryWrites=true&w=majority';
 
 mongoose
   .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
