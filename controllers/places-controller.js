@@ -78,8 +78,7 @@ const createPlace = async (req, res, next) => {
     description,
     address,
     location: coordinates,
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/8/87/Chrysler_building_from_empire_state_2008.jpg',
+    image: req.file.path,
     creator
   });
 
