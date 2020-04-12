@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
     next();
   } catch (err) {
     // If the split crashes cuz there is no authentication in headers
-    const error = new HttpError('Authentication failed!', 401);
+    const error = new HttpError('Authentication failed!', 403);
     return next(error);
   }
 };
