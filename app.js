@@ -45,12 +45,11 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || 'An unknown error occured!' });
 });
 
-const url =
-  'mongodb+srv://asamariya:XtV15vI676J9Dsyx@cluster0-a99mu.mongodb.net/mern-places?retryWrites=true&w=majority';
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-a99mu.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose
   .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(5000);
   })
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
